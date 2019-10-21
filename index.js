@@ -36,10 +36,15 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
+//Controllers
+var createController = require('./api/controllers/create-controller');
+
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
-  res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
+  res.status(200).send('Wellcome to parse-server example with nodejs and mongodb.');
 });
+
+app.use('/create',createController);
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
