@@ -15,7 +15,8 @@
     "parse-server": "*"
   },
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dashboard":"parse-dashboard --appId myAppId --masterKey parse_server_example_master_key --serverURL \"http://localhost:3000/parse\""
   },
   "engines": {
     "node": ">=4.3"
