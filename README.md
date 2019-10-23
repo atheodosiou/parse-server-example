@@ -1,7 +1,6 @@
 ## A demo project about parse server and parse dashboard
 ___
-
-![alt text](Screenshot_1"Parse Dashboard)
+![Parse Dashboard](https://user-images.githubusercontent.com/20326000/67381429-92e5a800-f594-11e9-8289-07c220dbdf72.png "Parse Dashboard")
 ### Build with parse nodejs express and mongodb run on Atlas
 
 Read more about parse at [parseplatform.org](https://parseplatform.org)
