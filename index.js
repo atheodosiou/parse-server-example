@@ -12,7 +12,7 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-console.log('Connection to Mongodb Atlas estamblished!', databaseUri);
+console.log('Connection to Mongodb Atlas estamblished!');
 
 var api = new ParseServer({
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
