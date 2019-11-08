@@ -28,6 +28,7 @@ var api = new ParseServer({
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 var app = express();
+app.use(express.json());
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
@@ -37,14 +38,14 @@ var mountPath = process.env.PARSE_MOUNT || '/parse';
 app.use(mountPath, api);
 
 //Controllers
-var createController = require('./api/controllers/create-controller');
+var usersController = require('./api/controllers/users-controller');
 
 // Parse Server plays nicely with the rest of your web routes
 app.get('/', function(req, res) {
   res.status(200).send('Wellcome to parse-server example with nodejs and mongodb.');
 });
 
-app.use('/create',createController);
+app.use('/users',usersController);
 
 // There will be a test page available on the /test path of your server url
 // Remove this before launching your app
