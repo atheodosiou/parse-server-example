@@ -35,7 +35,11 @@ app.use('/public', express.static(path.join(__dirname, '/public')));
 
 // Serve the Parse API on the /parse URL prefix
 var mountPath = process.env.PARSE_MOUNT || '/parse';
-app.use(mountPath, api);
+// app.use(mountPath, api);
+app.use(mountPath,(req,res,next)=>{
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  return next();
+});
 
 //Controllers
 var usersController = require('./api/controllers/users-controller');
